@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="user" template="/WEB-INF/layout/user/classic.jsp">
+		<put-attribute name="head" value="/WEB-INF/layout/user/head.jsp" />
+		<put-attribute name="header" value="/WEB-INF/layout/user/header.jsp" />
+	</definition>
+
+	<definition name="admin" template="/WEB-INF/layout/admin/classic.jsp">
+		<put-attribute name="header" value="/WEB-INF/layout/user/header.jsp" />
+		<put-attribute name="subHeader" value="/WEB-INF/layout/admin/subHeader.jsp"/>
+	</definition>
+
+	<definition name="admin-*" extends="admin">
+		<put-attribute name="body" value="/WEB-INF/views/admin/{1}.jsp" />
+	</definition>
+	<definition name="user-*" extends="user">
+		<put-attribute name="body" value="/WEB-INF/views/user/{1}.jsp" />
+		<put-attribute name="customHead" value="/WEB-INF/views/user/{1}Head.jsp" />
+	</definition>
+
+<!-- 	припустимо що метод контролера повернув admin-item -->
+<!-- 	тоді буде використаний темплейт описаний вище як -->
+<!-- 	definition name="admin" тайтл буде встановлений item -->
+<!-- 	а jsp для body буде взята з /WEB-INF/views/admin/item.jsp -->
+</tiles-definitions>
