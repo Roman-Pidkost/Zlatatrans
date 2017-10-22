@@ -156,7 +156,9 @@
                     </div>
                 </a>
                 <div class="catalog-item-description row">
-                    <div class="catalog-item-description-price col-xs-12">&#x20ac;<span class="commodityPrice">${commodity.price}</span>
+                    <div class="catalog-item-description-price col-xs-12">
+                        &#x20ac;<span class="commodityPrice">${commodity.price}</span>
+                        <p class="fullPrice"><c:choose><c:when test="${commodity.fullPrice != 0}">&#x20ac;${commodity.fullPrice}</c:when></c:choose></p>
                     </div>
                     <div class="row">
                         <div class="catalog-item-description-label icon-fuel">${commodity.fuelType.name}, ${String.format("%.2f", commodity.capacity).replace(",", ".")} л.</div>
