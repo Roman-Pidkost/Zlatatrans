@@ -55,8 +55,8 @@ public class IndexController {
         binder.registerCustomEditor(Transmission.class, new TransmissionEditor(transmissionService));
     }
 
-    @GetMapping
-    public String show(Model model, @PageableDefault(size = 9) Pageable pageable, @ModelAttribute("filter") IndexFilter filter) {
+    @GetMapping()
+    public String show(Model model, @PageableDefault(size = 9, sort = "model.make.name") Pageable pageable, @ModelAttribute("filter") IndexFilter filter) {
         model.addAttribute("page", commodityService.findAll(filter, pageable));
         model.addAttribute("bodyTypes", bodyTypeService.findAll());
         model.addAttribute("drives", driveService.findAll());

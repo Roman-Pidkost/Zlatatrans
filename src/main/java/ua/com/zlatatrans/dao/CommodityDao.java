@@ -7,5 +7,4 @@ import ua.com.zlatatrans.entity.Commodity;
 
 public interface CommodityDao extends JpaRepository<Commodity, Integer>, JpaSpecificationExecutor<Commodity> {
 
-
 }
