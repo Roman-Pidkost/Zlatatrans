@@ -7,11 +7,11 @@ public class ImageResizer {
 	
 	private final static Color OFFSET_COLOR = new Color(255, 255, 255);
 	
-	private final static int RELATION_X = 16;
-	private final static int RELATION_Y = 9;
+	private final static int RELATION_X = 4;
+	private final static int RELATION_Y = 3;
 
-	private final static int IMG_WIDTH = 864;
-	private final static int IMG_HEIGHT = 486;
+	private final static int IMG_WIDTH = 1320;
+	private final static int IMG_HEIGHT = 990;
 
 	private final BufferedImage old;
 
@@ -91,12 +91,12 @@ public class ImageResizer {
 		g.drawImage(present, 0, 0, IMG_WIDTH, IMG_HEIGHT, null);
 		g.dispose();
 		g.setComposite(AlphaComposite.Src);
-		g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
-				RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-		g.setRenderingHint(RenderingHints.KEY_RENDERING,
-				RenderingHints.VALUE_RENDER_QUALITY);
-		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-				RenderingHints.VALUE_ANTIALIAS_ON);
+//		g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
+//				RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+//		g.setRenderingHint(RenderingHints.KEY_RENDERING,
+//				RenderingHints.VALUE_RENDER_QUALITY);
+//		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+//				RenderingHints.VALUE_ANTIALIAS_ON);
 		return resizedImage;
 	}
 }
