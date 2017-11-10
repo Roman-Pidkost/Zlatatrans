@@ -19,7 +19,7 @@
     <bean id="templateMessage" class="org.springframework.mail.SimpleMailMessage">
         <property name="from" value="zlatatrans.sender@gmail.com" />
         <property name="subject" value="Zlatatrans-order" />
-        <property name="to" value="zlata.supp@gmail.com"/>
+        <property name="to" value="autotaras@gmail.com"/>
     </bean>
 
 </beans>

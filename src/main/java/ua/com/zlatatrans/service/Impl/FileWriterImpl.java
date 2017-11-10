@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import ua.com.zlatatrans.entity.Commodity;
 import ua.com.zlatatrans.service.FileWriter;
-import ua.com.zlatatrans.util.ImageResizer;
 import ua.com.zlatatrans.util.WaterMarkPainter;
 
 import javax.imageio.ImageIO;
@@ -43,10 +42,10 @@ public class FileWriterImpl implements FileWriter {
 									+ commodity.getYear() + "_" + String.format("%.2f", commodity.getCapacity()).replace(",", ".") + "_"
 									+ String.valueOf(sequenceNumber) + ".jpg";
 					File pathToFile = new File(pathToFolder, fileName);
-					ImageResizer resizer = new ImageResizer(old);
-					BufferedImage present = resizer.createOffset();
+//					ImageResizer resizer = new ImageResizer(old);
+//					BufferedImage present = resizer.createOffset();
 
-					ImageIO.write(present, "jpg", pathToFile);
+					ImageIO.write(old, "jpg", pathToFile);
 					sequenceNumber++;
 				} catch (IOException e) {
 					e.printStackTrace();
